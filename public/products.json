@@ -1,0 +1,110 @@
+[
+    {
+      "id": 1,
+      "name": "Elegant Sofa",
+      "image": "https://i.ibb.co/RNpsqyS/product1-min.png",
+      "price": 899.99,
+      "ratings": 4.5,
+      "category": "Living Room",
+      "details": "A luxurious sofa with premium fabric and comfortable seating."
+    },
+    {
+      "id": 2,
+      "name": "Modern Dining Table",
+      "image": "https://i.ibb.co/b3P6txh/product10-min.png",
+      "price": 499.99,
+      "ratings": 4,
+      "category": "Dining Room",
+      "details": "Sleek and stylish dining table for modern homes."
+    },
+    {
+      "id": 3,
+      "name": "Cozy Bed",
+      "image": "https://i.ibb.co/FKKghbV/product6-min.png",
+      "price": 799.99,
+      "ratings": 4.8,
+      "category": "Bedroom",
+      "details": "A comfortable and elegant bed for a good night's sleep."
+    },
+    {
+      "id": 4,
+      "name": "Study Desk",
+      "image": "https://i.ibb.co/f2dvwKp/product3-min.png",
+      "price": 299.99,
+      "ratings": 4.2,
+      "category": "Home Office",
+      "details": "Functional study desk with ample storage and a sleek design."
+    },
+    {
+      "id": 5,
+      "name": "Classic Wardrobe",
+      "image": "https://i.ibb.co/JRq77Bg/product2-min.png",
+      "price": 699.99,
+      "ratings": 4.6,
+      "category": "Bedroom",
+      "details": "Spacious wardrobe with a classic design and multiple compartments."
+    },
+    {
+      "id": 6,
+      "name": "Leather Recliner",
+      "image": "https://i.ibb.co/fCVJwND/product4-min.png",
+      "price": 799.99,
+      "ratings": 4.3,
+      "category": "Living Room",
+      "details": "A luxurious leather recliner for ultimate relaxation."
+    },
+    {
+      "id": 7,
+      "name": "Rustic Coffee Table",
+      "image": "https://i.ibb.co/QnW7DNZ/product5-min.png",
+      "price": 349.99,
+      "ratings": 4.7,
+      "category": "Living Room",
+      "details": "A charming coffee table with a rustic finish for your living space."
+    },
+    {
+      "id": 8,
+      "name": "Chic Sideboard",
+      "image": "https://i.ibb.co/FKKghbV/product6-min.png",
+      "price": 599.99,
+      "ratings": 4.4,
+      "category": "Dining Room",
+      "details": "A stylish sideboard with ample storage for your dining area."
+    },
+    {
+      "id": 9,
+      "name": "Contemporary Bookshelf",
+      "image": "https://i.ibb.co/DMTvjGG/product7-min.png",
+      "price": 449.99,
+      "ratings": 4.5,
+      "category": "Home Office",
+      "details": "Sleek and contemporary bookshelf for organizing your books and decor."
+    },
+    {
+      "id": 10,
+      "name": "Velvet Accent Chair",
+      "image": "https://i.ibb.co/svBXC3D/product8-min.png",
+      "price": 349.99,
+      "ratings": 4.8,
+      "category": "Living Room",
+      "details": "Plush velvet accent chair for a touch of luxury in any room."
+    },
+    {
+      "id": 11,
+      "name": "Queen Size Mattress",
+      "image": "https://i.ibb.co/h2ZtHHm/product9-min.png",
+      "price": 799.99,
+      "ratings": 4.6,
+      "category": "Bedroom",
+      "details": "High-quality queen-size mattress for a restful night's sleep."
+    },
+    {
+      "id": 12,
+      "name": "Baroque Dresser",
+      "image": "https://i.ibb.co/b3P6txh/product10-min.png",
+      "price": 649.99,
+      "ratings": 4.2,
+      "category": "Bedroom",
+      "details": "A stylish dresser with baroque-inspired design and spacious drawers."
+    }
+  ]
