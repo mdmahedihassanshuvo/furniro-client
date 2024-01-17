@@ -6,7 +6,7 @@ import { AuthContext } from "../../Components/Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, profileUpdate } = useContext(AuthContext);
 
   const {
     register,
@@ -22,14 +22,16 @@ const Register = () => {
       .then((result) => {
         const logedUser = result.user;
         console.log(logedUser);
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Sign up successfully",
-          showConfirmButton: false,
-          timer: 1500,
+        profileUpdate(data?.name, data?.photo).then(() => {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Sign up successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          reset();
         });
-        reset();
       })
       .catch((error) => console.log(error));
   };
