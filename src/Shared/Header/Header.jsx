@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo/logo.png";
+import { AuthContext } from "../../Components/Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Header = () => {
+  const { user, logout } = useContext(AuthContext);
+
+  const hangleLogout = () => {
+    logout();
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Log out successfully",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  };
+
   const navLists = (
     <>
       <li>
         <NavLink
           to="/"
-          className={({ isActive }) =>
-            isActive && "bg-[#ffe2d0] text-white"
-          }
+          className={({ isActive }) => isActive && "bg-[#ffe2d0] text-white"}
         >
           <span className="text-[#000000]">Home</span>
         </NavLink>
@@ -18,9 +31,7 @@ const Header = () => {
       <li>
         <NavLink
           to="/shop"
-          className={({ isActive }) =>
-            isActive && "bg-[#ffe2d0] text-white"
-          }
+          className={({ isActive }) => isActive && "bg-[#ffe2d0] text-white"}
         >
           <span className="text-[#000000]">Shop</span>
         </NavLink>
@@ -28,9 +39,7 @@ const Header = () => {
       <li>
         <NavLink
           to="/about"
-          className={({ isActive }) =>
-            isActive && "bg-[#ffe2d0]"
-          }
+          className={({ isActive }) => isActive && "bg-[#ffe2d0]"}
         >
           <span className="text-[#000000]">About</span>
         </NavLink>
@@ -38,9 +47,7 @@ const Header = () => {
       <li>
         <NavLink
           to="/contact"
-          className={({ isActive }) =>
-            isActive && "bg-[#ffe2d0] text-white"
-          }
+          className={({ isActive }) => isActive && "bg-[#ffe2d0] text-white"}
         >
           <span className="text-[#000000]">Contact</span>
         </NavLink>
@@ -81,11 +88,29 @@ const Header = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 space-x-5 text-base font-medium">{navLists}</ul>
+          <ul className="menu menu-horizontal px-1 space-x-5 text-base font-medium">
+            {navLists}
+          </ul>
         </div>
-        <div className="navbar-end">
-          <Link to="/login" className="btn hover:bg-[#ffe2d0] hover:border-none">Login</Link>
-        </div>
+        {user ? (
+          <button onClick={hangleLogout} className="navbar-end">
+            <Link
+              to="/login"
+              className="btn hover:bg-[#ffe2d0] hover:border-none"
+            >
+              Logout
+            </Link>
+          </button>
+        ) : (
+          <div className="navbar-end">
+            <Link
+              to="/login"
+              className="btn hover:bg-[#ffe2d0] hover:border-none"
+            >
+              Login
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

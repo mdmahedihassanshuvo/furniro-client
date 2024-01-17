@@ -22,22 +22,22 @@ const Products = () => {
       <div className="grid grid-cols-4 md:gap-5">
         {showAll
           ? products?.map((product) => (
-              <div className="md:mx-auto bg-[#f4f5f7]">
+              <div key={product?.id} className="md:mx-auto bg-[#f4f5f7]">
                 <img src={product?.image} alt="" />
-                <div>
-                  <h2>{product?.name}</h2>
-                  <p>{product?.category}</p>
-                  <p>${product?.price}</p>
+                <div className="p-2">
+                  <h2 className="text-2xl font-semibold">{product?.name}</h2>
+                  <p className="text-xs font-mono">{product?.category}</p>
+                  <p className="text-base font-semibold">${product?.price}</p>
                 </div>
               </div>
             ))
           : products?.slice(0, 8)?.map((product) => (
               <div className="md:mx-auto bg-[#f4f5f7]">
                 <img src={product?.image} alt="" />
-                <div>
-                  <h2>{product?.name}</h2>
-                  <p>{product?.category}</p>
-                  <p>${product?.price}</p>
+                <div className="p-2">
+                  <h2 className="text-2xl font-semibold">{product?.name}</h2>
+                  <p className="text-xs font-mono">{product?.category}</p>
+                  <p className="text-base font-semibold">${product?.price}</p>
                 </div>
               </div>
             ))}
