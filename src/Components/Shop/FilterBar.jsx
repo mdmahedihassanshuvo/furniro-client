@@ -5,7 +5,14 @@ import { HiMiniBars3 } from "react-icons/hi2";
 import { AuthContext } from "../Provider/AuthProvider";
 import useProducts from "../../Hooks/useProducts";
 
-const FilterBar = ({ allProducts, setProducts, refetch }) => {
+const FilterBar = ({
+  allProducts,
+  setProducts,
+  refetch,
+  lastItemIndex,
+  firstItemIndex,
+  cartStyle
+}) => {
   const [products] = useProducts();
   const [sortOrder, setSortOrder] = useState("default");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -17,6 +24,7 @@ const FilterBar = ({ allProducts, setProducts, refetch }) => {
     // console.log(e.target.innerText);
     setProducts(products);
     setSortOrder("default");
+    document.getElementById("showProductsNumber").style.display = "block";
   };
   const handleHome = (e) => {
     // console.log(e.target.innerText);
@@ -27,6 +35,7 @@ const FilterBar = ({ allProducts, setProducts, refetch }) => {
     console.log(filter);
     setProducts(filter);
     setSortOrder("default");
+    document.getElementById("showProductsNumber").style.display = "none";
   };
   const handleDining = (e) => {
     // console.log(e.target.innerText);
@@ -37,6 +46,7 @@ const FilterBar = ({ allProducts, setProducts, refetch }) => {
     console.log(filter);
     setProducts(filter);
     setSortOrder("default");
+    document.getElementById("showProductsNumber").style.display = "none";
   };
   const handleLiving = (e) => {
     // console.log(e.target.innerText);
@@ -47,6 +57,7 @@ const FilterBar = ({ allProducts, setProducts, refetch }) => {
     console.log(filter);
     setProducts(filter);
     setSortOrder("default");
+    document.getElementById("showProductsNumber").style.display = "none";
   };
   const handleBedRoom = (e) => {
     // console.log(e.target.innerText);
@@ -57,7 +68,21 @@ const FilterBar = ({ allProducts, setProducts, refetch }) => {
     console.log(filter);
     setProducts(filter);
     setSortOrder("default");
+    document.getElementById("showProductsNumber").style.display = "none";
   };
+
+  const handleFourTab = () => {
+    const styleCart = document.getElementById(cartStyle);
+    styleCart.style.display = "grid";
+    // styleCart.style.gridTemplateRows = '400px 500px';
+    styleCart.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
+  }
+  const handleTwoTab = () => {
+    const styleCart = document.getElementById(cartStyle);
+    styleCart.style.display = "grid";
+    // styleCart.style.gridTemplateRows = '400px 500px';
+    styleCart.style.gridTemplateColumns = "2fr 2fr"
+  }
 
   const handleSortChange = (e) => {
     const newSortOrder = e.target.value;
@@ -83,7 +108,11 @@ const FilterBar = ({ allProducts, setProducts, refetch }) => {
   };
 
   if (loading) {
-    return <div className="text-center"><progress className="progress w-56"></progress></div>;
+    return (
+      <div className="text-center">
+        <progress className="progress w-56"></progress>
+      </div>
+    );
   }
 
   return (
@@ -160,13 +189,15 @@ const FilterBar = ({ allProducts, setProducts, refetch }) => {
           </ul>
         </div> */}
         <div className="flex justify-center items-center gap-5 text-xl">
-          <button>
+          <button onClick={handleFourTab}>
             <PiCirclesFourFill />
           </button>
-          <button>
+          <button onClick={handleTwoTab}>
             <HiMiniBars3 />
           </button>
         </div>
+        |
+        <p id="showProductsNumber">showing {firstItemIndex+1}-{lastItemIndex} of {products?.length} results</p>
       </div>
       <div className="flex justify-center items-center md:gap-3">
         <p className="text-base font-medium">Sort by</p>
