@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ShopBanner from "../../Components/Shop/ShopBanner";
 import FilterBar from "../../Components/Shop/FilterBar";
-import ShopItem from "../../Components/Shop/ShopItem";
 import useProducts from "../../Hooks/useProducts";
 import Cart from "../../Components/Shared/Cart";
 import Pagination from "../../Components/Shop/Pagination";
@@ -14,9 +13,8 @@ const Shop = () => {
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
   const currentItems = allProducts.slice(firstItemIndex, lastItemIndex);
-  //   console.log( allProducts);
+    console.log( allProducts, currentItems);
   useEffect(() => {
-    // Update the state with the fetched products
     setAllProducts([...products]);
   }, [products]);
 
@@ -24,13 +22,13 @@ const Shop = () => {
     <div className="md:mb-[80px]">
       <ShopBanner />
       <FilterBar
-        products={allProducts}
+        allProducts={allProducts}
         setProducts={setAllProducts}
         refetch={refetch}
       />
       <div className="grid grid-cols-4 md:gap-5 md:mt-[65px]">
         {currentItems?.map((product) => (
-          <Cart product={product} key={product?.id} />
+          <Cart product={product} key={product?._id} />
         ))}
       </div>
       <Pagination
