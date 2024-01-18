@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useProducts from "../../Hooks/useProducts";
+import Cart from "../Shared/Cart";
 
 const Products = () => {
   const [products, refetch] = useProducts();
@@ -22,25 +23,11 @@ const Products = () => {
       <div className="grid grid-cols-4 md:gap-5">
         {showAll
           ? products?.map((product) => (
-              <div key={product?.id} className="md:mx-auto bg-[#f4f5f7]">
-                <img src={product?.image} alt="" />
-                <div className="p-2">
-                  <h2 className="text-2xl font-semibold">{product?.name}</h2>
-                  <p className="text-xs font-mono">{product?.category}</p>
-                  <p className="text-base font-semibold">${product?.price}</p>
-                </div>
-              </div>
+              <Cart product={product} key={product?.id} />
             ))
-          : products?.slice(0, 8)?.map((product) => (
-              <div className="md:mx-auto bg-[#f4f5f7]">
-                <img src={product?.image} alt="" />
-                <div className="p-2">
-                  <h2 className="text-2xl font-semibold">{product?.name}</h2>
-                  <p className="text-xs font-mono">{product?.category}</p>
-                  <p className="text-base font-semibold">${product?.price}</p>
-                </div>
-              </div>
-            ))}
+          : products
+              ?.slice(0, 8)
+              ?.map((product) => <Cart product={product} key={product?.id} />)}
       </div>
       {!showAll ? (
         <div className="text-center md:mt-[30px]">
