@@ -24,7 +24,7 @@ const Shop = () => {
 
   return (
     <div className="">
-      <ShopBanner />
+      <ShopBanner title="Shop" subTitle="Shop" />
       <FilterBar
         allProducts={allProducts}
         setProducts={setAllProducts}
