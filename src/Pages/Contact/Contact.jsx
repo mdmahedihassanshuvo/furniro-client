@@ -16,7 +16,7 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     axios
       .post("http://localhost:5000/contact", data)
       .then((data) => {
