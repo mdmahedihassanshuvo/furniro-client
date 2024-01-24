@@ -17,7 +17,7 @@ const Shop = () => {
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
   const currentItems = allProducts.slice(firstItemIndex, lastItemIndex);
-  console.log(allProducts, currentItems);
+  // console.log(allProducts, currentItems);
   useEffect(() => {
     setAllProducts([...products]);
   }, [products]);

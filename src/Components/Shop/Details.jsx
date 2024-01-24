@@ -1,20 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import useProducts from "../../Hooks/useProducts";
 import Rating from "react-rating";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
+import useCart from "../../Hooks/useCart";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Details = () => {
   const id = useParams();
   //   console.log(id?.id);
+  const { user } = useContext(AuthContext);
   const [products, refetch] = useProducts();
+  const [cartItems] = useCart();
+  const [disable, setDisable] = useState(false);
   const itemDetails = products.find((product) => product?._id === id?.id);
-  //   console.log(itemDetails);
-  const [isSelected1, setIsSelected1] = useState(false);
+  // console.log(cartItems);
+
+  const [isSelected1, setIsSelected1] = useState(true);
   const [isSelected2, setIsSelected2] = useState(false);
   const [isSelected3, setIsSelected3] = useState(false);
+  const [size, setSize] = useState();
   const [quantity, setquantity] = useState(1);
+  // console.log(isSelected1);
+
   const handleButtonClick1 = () => {
     setIsSelected1(!isSelected1);
     setIsSelected2(false);
@@ -42,6 +53,56 @@ const Details = () => {
   };
 
   const headLine = "Home > Shop >";
+
+  const addToCart = (id) => {
+    // console.log("clicked", id);
+    const addItem = products?.find((item) => item?._id === id);
+    const haveItem = cartItems?.find((item) => item?._id === addItem._id);
+
+    if (isSelected1 == true) {
+      const selectSize = document.getElementById("btnl").innerText;
+      setSize(selectSize);
+      console.log(typeof selectSize);
+    }
+    const addCart = {
+      id: addItem?.id,
+      _id: addItem?._id,
+      category: addItem?.category,
+      details: addItem?.details,
+      name: addItem?.name,
+      ratings: addItem?.ratings,
+      user: user?.email,
+      price: addItem?.price,
+      quantity: quantity,
+      image: addItem?.image,
+      size: size,
+    };
+    console.log(addCart);
+
+    if (cartItems?.find((item) => item?._id === haveItem?._id)) {
+      return Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "This item already exists to your cartlist",
+      });
+    } else {
+      axios
+        .post("http://localhost:5000/cart", addCart)
+        .then((res) => {
+          if (res?.data?.insertedId) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Add to cart successfully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            setDisable(true);
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+  };
 
   return (
     <div className="">
@@ -72,6 +133,7 @@ const Details = () => {
             <button
               onClick={handleButtonClick1}
               className="btn"
+              id="btnl"
               style={{
                 backgroundColor: isSelected1 ? "#e89f72" : "#f9f1e7",
                 color: isSelected1 ? "white" : "black",
@@ -82,6 +144,7 @@ const Details = () => {
             <button
               onClick={handleButtonClick2}
               className="btn"
+              id="btnxl"
               style={{
                 backgroundColor: isSelected2 ? "#e89f72" : "#f9f1e7",
                 color: isSelected2 ? "white" : "black",
@@ -92,6 +155,7 @@ const Details = () => {
             <button
               onClick={handleButtonClick3}
               className="btn"
+              id="btnxs"
               style={{
                 backgroundColor: isSelected3 ? "#e89f72" : "#f9f1e7",
                 color: isSelected3 ? "white" : "black",
@@ -111,7 +175,13 @@ const Details = () => {
               </button>
             </div>
             <div>
-              <button className="btn border-2 btn-neutral">Add to Cart</button>
+              <button
+                onClick={() => addToCart(itemDetails?._id)}
+                className="btn border-2 btn-neutral"
+                disabled={disable}
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>
