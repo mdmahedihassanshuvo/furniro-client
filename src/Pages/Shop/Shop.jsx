@@ -4,10 +4,7 @@ import FilterBar from "../../Components/Shop/FilterBar";
 import useProducts from "../../Hooks/useProducts";
 import Cart from "../../Components/Shared/Cart";
 import Pagination from "../../Components/Shop/Pagination";
-import { TfiCup } from "react-icons/tfi";
-import { IoIosCheckmarkCircleOutline } from "react-icons/io";
-import { MdOutlineTransferWithinAStation } from "react-icons/md";
-import { MdOutlineSupportAgent } from "react-icons/md";
+import FooterTitle from "../../Components/Shared/FooterTitle";
 
 const Shop = () => {
   const [products, refetch] = useProducts();
@@ -44,7 +41,8 @@ const Shop = () => {
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
       />
-      <div className="md:px-[50px] bg-[#ffe2d0] md:h-[270px] md:mt-[85px] flex justify-around items-center md:gap-3">
+      <FooterTitle />
+      {/* <div className="md:px-[50px] bg-[#ffe2d0] md:h-[270px] md:mt-[85px] flex justify-around items-center md:gap-3">
         <div className="flex justify-center items-center md:gap-2">
           <TfiCup className="text-5xl" />
           <div>
@@ -81,7 +79,7 @@ const Shop = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
