@@ -7,6 +7,7 @@ import Contact from "../Pages/Contact/Contact";
 import Login from "../Authentication/Login/Login";
 import Register from "../Authentication/Register/Register";
 import Details from "../Components/Shop/Details";
+import CartItem from "../Pages/Cart/CartItem";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/details/:id",
         element: <Details />,
+      },
+      {
+        path: "/cartItem",
+        element: <CartItem />,
       },
     ],
   },

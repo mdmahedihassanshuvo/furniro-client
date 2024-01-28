@@ -3,9 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo/logo.png";
 import { AuthContext } from "../../Components/Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { FaShoppingCart } from "react-icons/fa";
+import { FaUserTie } from "react-icons/fa";
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
+  // console.log(user);
+  
 
   const hangleLogout = () => {
     logout();
@@ -14,7 +18,7 @@ const Header = () => {
       icon: "success",
       title: "Log out successfully",
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     });
   };
 
@@ -92,15 +96,29 @@ const Header = () => {
             {navLists}
           </ul>
         </div>
+
         {user ? (
-          <button onClick={hangleLogout} className="navbar-end">
-            <Link
-              to="/login"
-              className="btn hover:bg-[#ffe2d0] hover:border-none"
-            >
-              Logout
-            </Link>
-          </button>
+          <div className="navbar-end flex items-center md:gap-10 ">
+            <div className="avatar">
+              <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <img title={user?.displayName} src={user?.photoURL} />
+              </div>
+            </div>
+            <div className="indicator hidden md:block">
+              {/* <span className="indicator-item badge badge-secondary">99+</span> */}
+              <Link to="/cartItem" className="">
+                <FaShoppingCart className="text-lg" />
+              </Link>
+            </div>
+            <button onClick={hangleLogout}>
+              <Link
+                to="/login"
+                className="btn hover:bg-[#ffe2d0] hover:border-none"
+              >
+                Logout
+              </Link>
+            </button>
+          </div>
         ) : (
           <div className="navbar-end">
             <Link

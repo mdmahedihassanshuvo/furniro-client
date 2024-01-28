@@ -16,7 +16,7 @@ import FooterTitle from "../../Components/Shared/FooterTitle";
 const About = () => {
   return (
     <div className="">
-      <ShopBanner subTitle="Blogs" />
+      <ShopBanner title="About" subTitle="Blogs" />
       <div className="md:mt-[80px] md:mx-[50px] grid grid-cols-5 md:gap-10">
         <div className="col-span-3">
           <div className="md:mb-3">
