@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../Components/Provider/AuthProvider";
 
 const useCart = () => {
@@ -8,7 +8,7 @@ const useCart = () => {
   const { data: cartItems, refetch } = useQuery({
     queryKey: ["cartItems"],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/cart/${user?.email}`);
+      const res = await axios.get(`https://furniro-server.vercel.app/cart/${user?.email}`);
       return res.data;
     },
   });

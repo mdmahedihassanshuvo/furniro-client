@@ -1,11 +1,11 @@
-import React from "react";
-import ShopBanner from "../../Components/Shop/ShopBanner";
-import { FaLocationDot } from "react-icons/fa6";
-import { FaPhoneAlt } from "react-icons/fa";
-import { MdOutlineAccessTimeFilled } from "react-icons/md";
 import axios from "axios";
-import Swal from "sweetalert2";
+import React from "react";
 import { useForm } from "react-hook-form";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdOutlineAccessTimeFilled } from "react-icons/md";
+import Swal from "sweetalert2";
+import ShopBanner from "../../Components/Shop/ShopBanner";
 
 const Contact = () => {
   const {
@@ -18,7 +18,7 @@ const Contact = () => {
   const onSubmit = (data) => {
     // console.log(data);
     axios
-      .post("http://localhost:5000/contact", data)
+      .post("https://furniro-server.vercel.app/contact", data)
       .then((data) => {
         // console.log(data);
         if (data?.data?.insertedId) {

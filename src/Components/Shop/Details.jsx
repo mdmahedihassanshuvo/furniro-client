@@ -1,12 +1,11 @@
-import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
-import useProducts from "../../Hooks/useProducts";
-import Rating from "react-rating";
-import { FaStar } from "react-icons/fa";
-import { FaRegStar } from "react-icons/fa";
-import useCart from "../../Hooks/useCart";
 import axios from "axios";
+import React, { useContext, useState } from "react";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import Rating from "react-rating";
+import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import useCart from "../../Hooks/useCart";
+import useProducts from "../../Hooks/useProducts";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Details = () => {
@@ -87,7 +86,7 @@ const Details = () => {
       });
     } else {
       axios
-        .post("http://localhost:5000/cart", addCart)
+        .post("https://furniro-server.vercel.app/cart", addCart)
         .then((res) => {
           if (res?.data?.insertedId) {
             Swal.fire({
