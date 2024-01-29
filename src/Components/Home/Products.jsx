@@ -16,11 +16,11 @@ const Products = () => {
   };
 
   return (
-    <div className="md:mt-[100px]">
-      <h2 className="text-center text-4xl font-bold md:mb-[30px]">
+    <div className="md:mt-[100px] mt-5">
+      <h2 className="text-center md:text-4xl text-3xl font-bold md:mb-[30px] mb-3">
         Our Products
       </h2>
-      <div className="grid grid-cols-4 md:gap-5">
+      <div className="grid md:grid-cols-4 grid-cols-2 md:gap-5 gap-3 md:mx-0 mx-4">
         {showAll
           ? products?.map((product) => (
               <Cart product={product} key={product?.id} />
@@ -30,7 +30,7 @@ const Products = () => {
               ?.map((product) => <Cart product={product} key={product?.id} />)}
       </div>
       {!showAll ? (
-        <div className="text-center md:mt-[30px]">
+        <div className="text-center md:mt-[30px] mt-[10px] md:mb-0 mb-[15px]">
           <button
             onClick={handleShowMore}
             className="text-center btn bg-white text-[#e89f72] border-[#e89f72] rounded-none"
@@ -39,7 +39,7 @@ const Products = () => {
           </button>
         </div>
       ) : (
-        <div className="text-center md:mt-[30px]">
+        <div className="text-center md:mt-[30px] mt-[10px] md:mb-0 mb-[15px]">
           <button
             onClick={handleShowLess}
             className="text-center btn bg-white text-[#e89f72] border-[#e89f72] rounded-none"

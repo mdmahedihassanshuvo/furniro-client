@@ -30,7 +30,7 @@ const Shop = () => {
         firstItemIndex={firstItemIndex}
         cartStyle={"cartStyle"}
       />
-      <div id="cartStyle" className="grid grid-cols-4 md:gap-5 md:mt-[65px]">
+      <div id="cartStyle" className="grid grid-cols-2 md:grid-cols-4 md:gap-5 gap-3 md:mt-[65px] md:p-0 p-4">
         {currentItems?.map((product) => (
           <Cart product={product} key={product?._id} />
         ))}

@@ -13,8 +13,8 @@ const Profile = () => {
   //   console.log(paymentDetails);
   const totalCost = paymentDetails?.reduce((acc, price) => acc + price?.price, 0);
   return (
-    <div className="md:h-[300px] md:mx-[50px] md:py-10 grid grid-cols-2 md:gap-5">
-      <div className="bg-emerald-500 w-full flex flex-col justify-center items-center rounded-lg">
+    <div className="md:h-[300px] md:mx-[50px] md:py-10 py-4 grid grid-cols-1 md:grid-cols-2 md:gap-5 gap-3">
+      <div className="bg-emerald-500 w-full flex md:p-0 p-10 flex-col justify-center items-center rounded-lg">
         <div className="avatar">
           <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <img src={user?.photoURL} />
@@ -22,14 +22,14 @@ const Profile = () => {
         </div>
         <h2 className="text-2xl font-medium md:mt-4 text-white">{user?.displayName}</h2>
       </div>
-      <div className="grid grid-cols-2 gap-2 md:gap-4 mx-2 md:mx-0 text-white">
+      <div className="grid grid-cols-2 gap-2 md:gap-4 mx-2 md:mx-0 md:mb-0 mb-3 text-white">
         <div className="bg-gradient-to-r from-[#bf3ff6] to-[#f3c4fe] md:p-4 rounded-md flex justify-center items-center md:gap-3">
           <p className="md:text-3xl font-medium">
             <IoWalletSharp />
           </p>
 
           <div>
-            <h2 className="md:text-xl font-medium">${totalCost.toFixed(2)}</h2>
+            <h2 className="md:text-xl font-medium">${totalCost?.toFixed(2)}</h2>
             <p className="md:text-xl font-medium">Payment</p>
           </div>
         </div>

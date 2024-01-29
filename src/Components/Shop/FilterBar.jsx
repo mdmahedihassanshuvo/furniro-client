@@ -116,7 +116,7 @@ const FilterBar = ({
   }
 
   return (
-    <div className="md:w-full md:h-[100px] bg-[#ffe2d0] flex justify-between items-center md:px-[100px]">
+    <div className="md:w-full md:p-0 p-4 md:h-[100px] bg-[#ffe2d0] flex md:flex-row flex-col justify-between items-center md:gap-0 gap-3 md:px-[100px]">
       <div className="flex justify-evenly items-center gap-7">
         <details className="dropdown">
           <summary className="m-1 btn">
@@ -199,7 +199,7 @@ const FilterBar = ({
         |
         <p id="showProductsNumber">showing {firstItemIndex+1}-{lastItemIndex} of {products?.length} results</p>
       </div>
-      <div className="flex justify-center items-center md:gap-3">
+      <div className="flex justify-center items-center md:gap-3 gap-2">
         <p className="text-base font-medium">Sort by</p>
         <select
           className="select select-bordered max-w-sm"

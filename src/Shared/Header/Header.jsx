@@ -98,13 +98,13 @@ const Header = () => {
         </div>
 
         {user ? (
-          <div className="navbar-end flex items-center md:gap-10 ">
+          <div className="navbar-end flex items-center md:gap-10 gap-5">
             <Link to="/profile" className="avatar">
               <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                 <img title={user?.displayName} src={user?.photoURL} />
               </div>
             </Link>
-            <div className="indicator hidden md:block">
+            <div className="indicator md:block">
               {/* <span className="indicator-item badge badge-secondary">99+</span> */}
               <Link to="/cartItem" className="">
                 <FaShoppingCart className="text-lg" />

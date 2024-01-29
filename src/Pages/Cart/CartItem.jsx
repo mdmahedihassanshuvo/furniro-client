@@ -31,8 +31,8 @@ const CartItem = () => {
   return (
     <div className="">
       <ShopBanner title="Cart" subTitle="cart" />
-      <div className="md:mx-[50px] md:py-10 grid grid-cols-4 md:gap-5 md:h-[300px]">
-        <div className="overflow-x-auto col-span-3">
+      <div className="md:mx-[50px] mt-4 md:py-10 grid grid-cols-1 md:grid-cols-4 md:gap-5 md:h-[300px]">
+        <div className="overflow-x-auto md:col-span-3">
           <table className="table">
             {/* head */}
             <thead>
@@ -53,7 +53,7 @@ const CartItem = () => {
             </tbody>
           </table>
         </div>
-        <div className="bg-[#ffe2d0] flex flex-col justify-evenly items-center">
+        <div className="bg-[#ffe2d0] md:p-0 p-6 flex flex-col justify-evenly items-center md:gap-0 gap-3">
           <div>
             <h3 className="text-center text-3xl font-semibold md:p-3">
               Cart Total

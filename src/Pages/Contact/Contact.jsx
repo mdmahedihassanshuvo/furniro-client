@@ -37,15 +37,15 @@ const Contact = () => {
   return (
     <div>
       <ShopBanner title="Contact" subTitle="Contact" />
-      <div className="text-center md:mt-[100px] space-y-2">
-        <h2 className="text-4xl font-semibold">Get In Touch With Us</h2>
-        <p className="">
+      <div className="text-center md:mt-[100px] mt-4 space-y-2">
+        <h2 className="md:text-4xl text-xl font-semibold">Get In Touch With Us</h2>
+        <p className="md:text-base text-sm">
           For More Information About Our Product & Services. Please Feel Free To
           Drop Us <br /> An Email. Our Staff Always Be There To Help You Out. Do
           Not Hesitate!
         </p>
       </div>
-      <div className="flex justify-evenly items-center">
+      <div className="flex md:flex-row flex-col-reverse justify-evenly items-center md:mb-0 mb-3">
         <div className="flex flex-col md:gap-4">
           <div className="flex md:gap-3">
             <FaLocationDot className="text-2xl md:m-2" />

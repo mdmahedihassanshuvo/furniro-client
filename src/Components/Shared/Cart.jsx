@@ -17,7 +17,7 @@ const Cart = ({ product }) => {
       </div>
       <div
         id="hover"
-        className="absolute flex items-center justify-center top-0 w-[285px] h-[389px] text-white bg-black opacity-0 hover:opacity-80 transition-transform hover:scale-105 "
+        className="absolute flex items-center justify-center md:top-0 md:w-[285px] w-[185px] md:h-[389px] h-[200px] text-white bg-black opacity-0 hover:opacity-80 transition-transform hover:scale-105 "
       >
         <Link
         to={`/details/${product?._id}`}

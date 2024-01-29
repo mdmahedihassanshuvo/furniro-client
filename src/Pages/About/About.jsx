@@ -17,9 +17,9 @@ const About = () => {
   return (
     <div className="">
       <ShopBanner title="About" subTitle="Blogs" />
-      <div className="md:mt-[80px] md:mx-[50px] grid grid-cols-5 md:gap-10">
+      <div className="md:mt-[80px] md:mx-[50px] grid md:grid-cols-5 grid-cols-1 md:gap-10">
         <div className="col-span-3">
-          <div className="md:mb-3">
+          <div className="md:mb-3 md:p-0 p-4">
             <img className="md:w-[817px] md:h-[500px] " src={blog1} alt="" />
             <div className="flex items-center md:gap-10 md:mt-3">
               <p className="flex items-center md:gap-3 text-slate-400">
@@ -49,7 +49,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="md:mb-3">
+          <div className="md:mb-3 md:p-0 p-4">
             <img src={blog2} alt="" />
             <div className="flex items-center md:gap-10 md:mt-3">
               <p className="flex items-center md:gap-3 text-slate-400">
@@ -79,7 +79,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="md:mb-3">
+          <div className="md:mb-3 md:p-0 p-4">
             <img src={blog3} alt="" />
             <div className="flex items-center md:gap-10 md:mt-3">
               <p className="flex items-center md:gap-3 text-slate-400">
@@ -110,9 +110,9 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="md:mx-auto col-span-2">
-          <p className="text-xl font-medium md:mb-5">Recent Post</p>
-          <div className="flex md:gap-2 md:mb-4">
+        <div className="md:mx-auto col-span-2 md:p-0 p-5">
+          <p className="md:text-xl text-2xl font-medium md:mb-5 mb-2">Recent Post</p>
+          <div className="flex md:gap-2 md:mb-4 mb-3 gap-2">
             <img src={post1} alt="" />
             <div>
               <p className="font-medium text-sm">
@@ -121,7 +121,7 @@ const About = () => {
               <p className="text-sm text-slate-400">03 Aug 2022</p>
             </div>
           </div>
-          <div className="flex md:gap-2 md:mb-4">
+          <div className="flex md:gap-2 md:mb-4 mb-3 gap-2">
             <img src={post2} alt="" />
             <div>
               <p className="font-medium text-sm">
@@ -130,7 +130,7 @@ const About = () => {
               <p className="text-sm text-slate-400">03 Aug 2022</p>
             </div>
           </div>
-          <div className="flex md:gap-2 md:mb-4">
+          <div className="flex md:gap-2 md:mb-4 mb-3 gap-2">
             <img src={post3} alt="" />
             <div>
               <p className="font-medium text-sm">
@@ -139,14 +139,14 @@ const About = () => {
               <p className="text-sm text-slate-400">03 Aug 2022</p>
             </div>
           </div>
-          <div className="flex md:gap-2 md:mb-4">
+          <div className="flex md:gap-2 md:mb-4 mb-3 gap-2">
             <img src={post4} alt="" />
             <div>
               <p className="font-medium text-sm">Modern home in Milan</p>
               <p className="text-sm text-slate-400">03 Aug 2022</p>
             </div>
           </div>
-          <div className="flex md:gap-2 md:mb-4">
+          <div className="flex md:gap-2 md:mb-4 mb-3 gap-2">
             <img src={post5} alt="" />
             <div>
               <p className="font-medium text-sm">Colorful office redesign</p>

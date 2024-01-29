@@ -6,10 +6,10 @@ import { Pagination } from "swiper/modules";
 
 const Slider = () => {
   return (
-    <div className=" md:mt-[70px] md:p-[45px] bg-[#ffe2d0]">
+    <div className=" md:mt-[70px] md:p-[45px] p-4 bg-[#ffe2d0]">
       <div className="flex justify-center items-center md:gap-4 ">
         <div className="md:w-2/5">
-          <h2 className="text-4xl font-bold">
+          <h2 className="md:text-4xl text-2xl md:font-bold font-medium">
             50+ Beautiful rooms <br /> inspiration
           </h2>
           <p className="text-sm font-thin">
