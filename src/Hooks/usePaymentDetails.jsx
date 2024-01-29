@@ -9,7 +9,7 @@ const usePaymentDetails = () => {
     queryKey: ["paymentDetails", user?.email],
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:5000/payment/${user?.email}`
+        `https://furniro-server.vercel.app/payment/${user?.email}`
       );
       return res.data;
     },

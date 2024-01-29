@@ -8,7 +8,7 @@ const useCart = () => {
   const { data: cartItems, refetch } = useQuery({
     queryKey: ["cartItems"],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/cart/${user?.email}`);
+      const res = await axios.get(`https://furniro-server.vercel.app/cart/${user?.email}`);
       return res.data;
     },
   });

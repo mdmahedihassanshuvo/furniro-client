@@ -9,7 +9,7 @@ const useProducts = () => {
     queryKey: ["products"],
     enabled: !loading,
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/products");
+      const res = await axios.get("https://furniro-server.vercel.app/products");
       return res.data;
     },
   });
