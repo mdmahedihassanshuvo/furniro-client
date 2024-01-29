@@ -18,7 +18,7 @@ const Contact = () => {
   const onSubmit = (data) => {
     // console.log(data);
     axios
-      .post("https://furniro-server.vercel.app/contact", data)
+      .post("http://localhost:5000/contact", data)
       .then((data) => {
         // console.log(data);
         if (data?.data?.insertedId) {

@@ -99,11 +99,11 @@ const Header = () => {
 
         {user ? (
           <div className="navbar-end flex items-center md:gap-10 ">
-            <div className="avatar">
+            <Link to="/profile" className="avatar">
               <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                 <img title={user?.displayName} src={user?.photoURL} />
               </div>
-            </div>
+            </Link>
             <div className="indicator hidden md:block">
               {/* <span className="indicator-item badge badge-secondary">99+</span> */}
               <Link to="/cartItem" className="">

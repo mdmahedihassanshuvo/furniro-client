@@ -21,7 +21,7 @@ const CheckoutForm = ({ price }) => {
       return;
     }
     axios
-      .post("https://furniro-server.vercel.app/create-payment-intent", { price })
+      .post("http://localhost:5000/create-payment-intent", { price })
       .then((res) => {
         // console.log(res.data.clientSecret);
         setClientSecret(res.data.clientSecret);
@@ -88,7 +88,7 @@ const CheckoutForm = ({ price }) => {
         quantity: cartItems?.length,
       };
       axios
-        .post("https://furniro-server.vercel.app/payment", payment)
+        .post("http://localhost:5000/payment", payment)
         .then((res) => {
           console.log(res.data);
         })

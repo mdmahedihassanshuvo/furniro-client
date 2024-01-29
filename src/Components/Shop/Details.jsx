@@ -86,7 +86,7 @@ const Details = () => {
       });
     } else {
       axios
-        .post("https://furniro-server.vercel.app/cart", addCart)
+        .post("http://localhost:5000/cart", addCart)
         .then((res) => {
           if (res?.data?.insertedId) {
             Swal.fire({

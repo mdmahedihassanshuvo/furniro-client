@@ -9,6 +9,7 @@ import Register from "../Authentication/Register/Register";
 import Details from "../Components/Shop/Details";
 import CartItem from "../Pages/Cart/CartItem";
 import Payment from "../Pages/Payment/Payment";
+import Profile from "../Pages/Profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/payment/:price",
         element: <Payment />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
       },
     ],
   },
