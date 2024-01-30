@@ -1,12 +1,16 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Components/Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const { loginUser, socialLogin } = useContext(AuthContext);
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
+  const navigate = useNavigate();
+  console.log(location);
 
   const {
     register,
@@ -30,6 +34,7 @@ const Login = () => {
           timer: 1500,
         });
         reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
@@ -48,6 +53,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate(from, { replace: true });
       })
       .catch((error) => console.log(error));
   };

@@ -14,7 +14,7 @@ const CartItem = () => {
     (acc, crntPrice) => acc + crntPrice?.price,
     0
   );
-  console.log(totalPrice);
+  // console.log(totalPrice);
 
   if (loading) {
     return (

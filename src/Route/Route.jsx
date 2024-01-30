@@ -10,6 +10,7 @@ import Details from "../Components/Shop/Details";
 import CartItem from "../Pages/Cart/CartItem";
 import Payment from "../Pages/Payment/Payment";
 import Profile from "../Pages/Profile/Profile";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -42,11 +43,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <Details />,
+        element: (
+          <PrivateRoute>
+            <Details />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/cartItem",
-        element: <CartItem />,
+        element: (
+          <PrivateRoute>
+            <CartItem />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/payment/:price",
@@ -54,7 +63,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile />,
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
     ],
   },

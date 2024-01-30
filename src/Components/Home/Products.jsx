@@ -6,7 +6,7 @@ const Products = () => {
   const [products, refetch] = useProducts();
   const [showAll, setShowAll] = useState(false);
   const [active, setActive] = useState(false);
-  console.log(products);
+  // console.log(products);
 
   const handleShowMore = () => {
     setShowAll(true);

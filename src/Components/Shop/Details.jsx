@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import useCart from "../../Hooks/useCart";
 import useProducts from "../../Hooks/useProducts";
@@ -61,7 +61,7 @@ const Details = () => {
     if (isSelected1 == true) {
       const selectSize = document.getElementById("btnl").innerText;
       setSize(selectSize);
-      console.log(typeof selectSize);
+      // console.log(typeof selectSize);
     }
     const addCart = {
       id: addItem?.id,
@@ -76,7 +76,7 @@ const Details = () => {
       image: addItem?.image,
       size: size,
     };
-    console.log(addCart);
+    // console.log(addCart);
 
     if (cartItems?.find((item) => item?._id === haveItem?._id)) {
       return Swal.fire({
