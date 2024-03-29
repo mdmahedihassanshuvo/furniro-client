@@ -14,11 +14,11 @@ const Main = () => {
     );
   }
   return (
-    <>
+    <div className="mx-auto">
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 };
 
